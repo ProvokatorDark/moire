@@ -28,7 +28,9 @@
         </svg>
       </button>
 
-      <input type="text" v-model.number="item.productQuantity">
+      <input type="text" v-model.number="item.productQuantity"
+      @input="onInput($event, item)"
+      >
 
       <button type="button" aria-label="Добавить один товар"
               @click="updateLocalCartProductAmount(item.productQuantity+1)">
@@ -68,6 +70,10 @@ export default {
       if (value >= 1) {
         this.$store.dispatch('updateCartProductAmount', { basketItemId: this.item.productBascetId, quantity: value });
       }
+    },
+    onInput(e) {
+      this.item.productQuantity = Math.max(1, (e.target.value) || 1);
+      this.$store.dispatch('updateCartProductAmount', { basketItemId: this.item.productBascetId, quantity: this.item.productQuantity });
     },
   },
   computed: {

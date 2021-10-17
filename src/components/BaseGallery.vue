@@ -5,7 +5,8 @@
     </div>
     <ul class="pics__list">
       <template>
-        <li v-for="(item,index) in product.colors[imgColorIdUpdate].gallery" class="pics__item">
+        <li v-for="(item,index) in product.colors[imgColorIdUpdate].gallery"
+            :key="index" class="pics__item">
           <a href="#" class="pics__link" @click.prevent="thumbClick(index)"
              :class="{'pics__link--current':index===imgGalleryIdUpdate}">
             <img width="98" height="98" :src="item.file.url">
@@ -18,7 +19,7 @@
 </template>
 
 <script>
-import srcImageUrlColors from "@/helpers/srcImageUrlColors";
+import srcImageUrlColors from '@/helpers/srcImageUrlColors';
 
 export default {
   name: 'BaseGallery',
@@ -26,42 +27,41 @@ export default {
     return {
       imgColorIdUpdate: 0,
       imgGalleryIdUpdate: 0,
-    }
+    };
   },
   props: {
     product: {
       type: Object,
-      required: true
+      required: true,
     },
     imgIdUpdate: {
       type: Number,
-      required: true
+      required: true,
     },
     galleryIdUpdate: {
       type: Number,
-      required: true
+      required: true,
     },
   },
   methods: {
-    thumbClick(index){
-      this.imgGalleryIdUpdate = index
-    }
+    thumbClick(index) {
+      this.imgGalleryIdUpdate = index;
+    },
 
   },
   computed: {
     srcImageUrlColors,
   },
   watch: {
-    imgIdUpdate: function (imgIdUpdate) {
-      this.imgColorIdUpdate = imgIdUpdate
+    imgIdUpdate(imgIdUpdate) {
+      this.imgColorIdUpdate = imgIdUpdate;
     },
-    galleryIdUpdate: function (galleryIdUpdate) {
-      this.imgGalleryIdUpdate = galleryIdUpdate
-    }
+    galleryIdUpdate(galleryIdUpdate) {
+      this.imgGalleryIdUpdate = galleryIdUpdate;
+    },
   },
   created() {
-
-  }
+  },
 };
 </script>
 

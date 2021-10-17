@@ -60,7 +60,7 @@
               </div>
 
               <b class="item__price">
-                {{ product.price|numberFormat }} ₽
+                {{ product.price * productAmount|numberFormat }} ₽
               </b>
             </div>
 
@@ -247,6 +247,11 @@ export default {
         this.loadProduct();
       },
       immediate: true,
+    },
+    productAmount(value) {
+      if (value < 1) {
+        this.productAmount = 1;
+      }
     },
   },
 };

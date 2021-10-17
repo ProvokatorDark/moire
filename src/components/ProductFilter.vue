@@ -28,7 +28,7 @@
                   name="category"
                   type="text"
           >
-            <option value="0">Все категории</option>
+            <option  value="0">Все категории</option>
             <option
               v-for="category in categories"
               :key="category.id"
@@ -118,7 +118,7 @@ export default {
   data() {
     return {
       currentPriceFrom: 0,
-      currentPriceTo: null,
+      currentPriceTo: 0,
       currentCategoryId: 0,
       currentMaterialId: [],
       currentSeasonId: [],
@@ -209,7 +209,7 @@ export default {
       this.$emit('update:color-id', []);
       this.currentCategoryId = 0;
       this.currentPriceFrom = 0;
-      this.currentPriceTo = null;
+      this.currentPriceTo = 0;
 
       this.$router.push({ name: 'main' })
         .catch((failure) => {

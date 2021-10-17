@@ -82,7 +82,7 @@ export default {
       productsLoadingFailed: false,
       filterPriceFrom: null,
       filterPriceTo: null,
-      filterCategoryId: null,
+      filterCategoryId: 0,
       filterMaterialId: [],
       filterSeasonId: [],
       filterColorId: [],

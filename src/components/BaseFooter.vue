@@ -3,9 +3,9 @@
     <div class="footer__wrapper">
       <ul class="footer__links">
         <li>
-          <a class="footer__link" href="#">
-            Каталог
-          </a>
+          <router-link :to="{name:'main'}">
+            <span class="header__info">Каталог</span>
+          </router-link>
         </li>
         <li>
           <a class="footer__link" href="tel:88006009009">
@@ -13,8 +13,8 @@
           </a>
         </li>
         <li>
-          <a class="footer__link" href="mailto:hi@technozavrrr.com">
-            hi@technozavrrr.com
+          <a class="footer__link" href="mailto:hi@moire.com">
+            hi@moire.com
           </a>
         </li>
         <li>
@@ -87,7 +87,7 @@
       </ul>
 
       <span class="footer__copyright">
-        © 2020 Moire
+        © 2021 Moire
       </span>
     </div>
   </footer>
