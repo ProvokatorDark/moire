@@ -41,7 +41,7 @@
     </div>
 
     <b class="product__price">
-      {{item.productPrice|numberFormat}} ₽
+      {{item.productPrice*item.productQuantity|numberFormat}} ₽
     </b>
 
     <button class="product__del button-del" type="button" aria-label="Удалить товар из корзины"
