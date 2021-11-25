@@ -9,23 +9,24 @@
 </template>
 
 <script>
-import BaseFormField from "@/components/BaseFormField";
+import BaseFormField from '@/components/BaseFormField.vue';
+
 export default {
-  name: "BaseFormText",
+  name: 'BaseFormText',
   props: ['title', 'error', 'placeholder', 'front'],
-  components:{BaseFormField},
+  components: { BaseFormField },
   computed: {
     dataValue: {
       get() {
         return this.value;
       },
       set(value) {
-        this.$emit('input', value)
-      }
-    }
+        this.$emit('input', value);
+      },
+    },
 
-  }
-}
+  },
+};
 </script>
 
 <style scoped>

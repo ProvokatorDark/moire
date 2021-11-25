@@ -8,7 +8,7 @@
 <script>
 import BaseHeader from '@/components/BaseHeader.vue';
 import BaseFooter from '@/components/BaseFooter.vue';
-import {mapActions , mapMutations} from 'vuex';
+import { mapActions, mapMutations } from 'vuex';
 
 export default {
   name: 'App',
@@ -16,17 +16,17 @@ export default {
     BaseHeader,
     BaseFooter,
   },
-  methods:{
+  methods: {
     ...mapActions(['loadCart']),
     ...mapMutations(['updateAccessKey']),
   },
   created() {
     const userAccessKey = localStorage.getItem('userAccessKey');
-    if (userAccessKey){
-        this.updateAccessKey(userAccessKey)
+    if (userAccessKey) {
+      this.updateAccessKey(userAccessKey);
     }
     this.loadCart();
-  }
+  },
 };
 </script>
 
